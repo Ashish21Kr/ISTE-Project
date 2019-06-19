@@ -1,0 +1,113 @@
+doctype html
+html
+  head
+    title  Welcome
+    meta
+    //bootstrap links
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    //internal links
+    link(href='stylesheets/login.css', rel='stylesheet')
+  body
+    .login
+      .wrap
+        #toggle-wrap
+          #toggle-terms
+            #cross
+              span
+              span
+        // TERMS
+        .terms
+          h2 Terms of Service
+          p.small Nothing To Display
+        // RECOVERY
+        .recovery
+          h2 Password Recovery
+          p
+            | Enter 
+            strong email address
+            |  and 
+            strong click Submit
+          p We'll email instructions on how to reset your password.
+          form.recovery-form(action='/forgotpassword', method='post')
+            input#user_recover.input(type='text', placeholder='Enter Email')
+            input.button(type='submit', value='Submit')
+          p.mssg An email has been sent to you with further instructions.
+        // SLIDER
+        .content
+          // LOGO
+          .logo
+            a(href='#')
+              img(src='images/iste.png', alt='', style='width:100px; height:100px')
+          // SLIDESHOW
+          #slideshow
+            .one
+              h2
+                span EDUCATION
+              p Education is not preparation for life; education is life itself
+            .two
+              h2
+                span KNOWLEDGE
+              p For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone.
+            .three
+              h2
+                span BRIDGE
+              p True teachers use themselves as bridges over which they invite their students to cross; then, having facilitated their crossing, joyfully collapse, encouraging them to create bridges of their own.
+            .four
+              h2
+                span ATTITUDE
+              p Each day, I come in with a positive attitude, trying to get better.
+        // LOGIN FORM
+        .user
+          //ACTIONS
+            <div class="actions">
+            <a class="help" href="#signup-tab-content">Sign Up</a><a class="faq" href="#login-tab-content">Login</a>
+            </div>
+          .form-wrap
+            // TABS
+            .tabs
+              h3.login-tab
+                a.log-in.active(href='#login-tab-content')
+                  span
+                    | Login
+                    span
+              h3.signup-tab
+                a.sign-up(href='#signup-tab-content')
+                  span Sign Up
+            // TABS CONTENT
+            .tabs-content
+              // TABS CONTENT LOGIN
+              #login-tab-content.active
+                form.login-form(action='/login', method='post')
+                  input.input(type='text', autocomplete='off', name='email', placeholder='Email', required)
+                  input.input(type='password', autocomplete='off', name='password', placeholder='Password', required)
+                  select.input(type='text', name='role', required style='background-color:#474E5B')
+                    option(value='S&H') Staff/Head Master
+                    option(value='MEO') Mandal Education Officer
+                    option(value='DEO') District Education Officer
+                  input.checkbox(type='checkbox', checked='')
+                  label(for='remember_me') Remember me
+                  input.btn.btn-info(type='submit', value='Login')
+                .help-action
+                  p
+                    i.fa.fa-arrow-left(aria-hidden='true')
+                    a.forgot(href='#') Forgot your password?
+              // TABS CONTENT SIGNUP
+              #signup-tab-content
+                form.signup-form(action='/signup', method='post')
+                  input.input(type='email', autocomplete='off', name='email', placeholder='Email', required)
+                  input.input(type='text', autocomplete='off', name='name', placeholder='Full Name', required)
+                  input.input(type='password', autocomplete='off', name='password', placeholder='Password', required)
+                  select.input(type='text', name='role', required style='background-color:#474E5B')
+                    option(value='S&H') Staff/Head Master
+                    option(value='MEO') Mandal Education Officer
+                    option(value='DEO') District Education Officer
+                  input.btn.btn-info(type='submit', value='Sign Up')
+                .help-action
+                  p By signing up, you agree to our
+                  p
+                    i.fa.fa-arrow-left(aria-hidden='true')
+                    a.agree(href='#') Terms of service
+    //scripts
+    script(src='javascripts/login.js')

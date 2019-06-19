@@ -1,0 +1,383 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title Home
+    link(type='image/png', href='adityalogo.png', rel='icon')
+    // Bootstrap core CSS
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    // Custom styles for this template
+    link(href='stylesheets/style.css', rel='stylesheet')
+    link(href='stylesheets/style-responsive.css', rel='stylesheet')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css')
+    script(src='http://code.jquery.com/jquery-1.9.1.js')
+    script(src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
+    style.
+      @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      .text
+      {
+      font-weight:bold;
+      font-size: 18px;
+      color:#F2815E;
+      }
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      #wd
+      {
+      margin-left:20px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      .personal_details {
+      background-color: white;
+      width: 90%;
+      margin-left:5%;
+      }
+      .personal_details h3 {
+      padding: 10px;
+      border-bottom: 2px solid #fd9f1b;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+
+      .success-text {
+      color: #82b33a;
+      }
+      .btn-info{
+      margin-left:20px;
+      }
+      .btn-circle {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 12px;
+      line-height: 1.428571429;
+      border-radius: 15px;
+      }
+      .data{
+        font-weight:bold;
+      }
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='#')
+          b
+            img.img-responsive(src='images/school.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .navbar-custom-menu
+          ul.top-nav.navbar-right
+            // Notification Menu
+            // User Menu
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                i.fa.fa-user.fa-lg.pull-right(style='margin: 10px 10px 0 0;font-size: 2.2em;color: #f2815e;')
+              ul.dropdown-menu.settings-menu(style="margin-top: 35px")
+                li
+                  a(href='/help',target='_blank')
+                    i.fa.fa-question.fa-lg
+                    |  Help
+                li
+                  a(href='/change')
+                    i.fa.fa-cog.fa-lg
+                    |  Settings
+                li
+                  a(href='/logout')
+                    i.fa.fa-sign-out.fa-lg
+                    |  Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='#')
+                img.img-circle(src='images/user.png', width='80')
+            h5.centered
+              p Name
+            li.sub-menu
+              a(data-toggle='tab', href='#feedback')
+                i.fa.fa-edit
+                span Feedback
+            li.sub-menu
+              a(data-toggle='tab', href='#contact')
+                i.fa.fa-phone
+                span Contact
+          // sidebar menu end
+      // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #feedback.tab-pane.fade.in.active
+                  .container
+                    .col-lg-9
+                      form#reg_form.form-horizontal(action=' ', method='post')
+                        fieldset
+                          .form-group
+                            label.col-md-4.control-label.text Country :
+                            .col-md-6.selectContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-list
+                                select#country.form-control.selectpicker(name='country')
+                                  option(value='') -- Country --
+                          .form-group
+                            label.col-md-4.control-label.text State :
+                            .col-md-6.selectContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-list
+                                select#region.form-control.selectpicker(name='state')
+                                  option(value='') -- State --
+                          .form-group
+                            label.col-md-4.control-label.text District :
+                            .col-md-6.selectContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-list
+                                select#city.form-control.selectpicker(name='district')
+                                  option(value='') -- District --
+                          .form-group
+                            label.col-md-4.control-label.text Mandal :
+                            .col-md-6.inputGroupContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-home
+                                input.form-control(name='mandal', placeholder='Mandal', type='text')
+                          .form-group
+                            label.col-md-4.control-label.text Village :
+                            .col-md-6.inputGroupContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-home
+                                input.form-control(name='village', placeholder='Village', type='text')
+                          .form-group
+                            label.col-md-4.control-label.text School :
+                            .col-md-6.inputGroupContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-home
+                                input.form-control(name='school', placeholder='School', type='text')
+                          .form-group
+                            label.col-md-4.control-label.text Complaint :
+                            .col-md-6.inputGroupContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-home
+                                textarea.form-control(name='complaint')
+                          .form-group
+                            label.col-md-4.control-label.text Image :
+                            .col-md-6.inputGroupContainer
+                              .input-group
+                                span.input-group-addon
+                                  i.glyphicon.glyphicon-home
+                                input.form-control(name='image', type='file')        
+                          // Button
+                          .form-group
+                            label.col-md-4.control-label
+                            .col-md-4
+                              button.btn(type='submit', style='background-color:#F2815E; color:white')
+                                | Submit 
+                                span.glyphicon.glyphicon-send
+
+                #contact.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-phone
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Contact Us
+      // /MAIN CONTENT
+      // main content end
+
+    // js placed at the end of the document so the pages load faster
+    script(src='javascripts/jquery.js')
+    script(src='javascripts/bootstrap.min.js')
+    script(src='javascripts/jquery-ui-1.9.2.custom.min.js')
+    script(src='javascripts/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='javascripts/jquery.dcjqaccordion.2.7.js')
+    script(src='javascripts/jquery.scrollTo.min.js')
+    script(src='javascripts/jquery.nicescroll.js', type='text/javascript')
+    script(src='javascripts/location.js')
+    // common script for all pages
+    script(src='javascripts/common-scripts.js')
+    // script for this page
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });
